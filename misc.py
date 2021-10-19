@@ -23,7 +23,6 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 dp.middleware.setup(LoggingMiddleware())
 
-ACCESS_IDs = '124856900'
 
 dp.middleware.setup(AccessMiddleware(ACCESS_IDs))
 

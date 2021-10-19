@@ -5,7 +5,7 @@ logger = getLogger()
 class MembersList():
 
     def __init__(self):
-        self.new('', 0)
+        self.new('', 0, -1, -1)
 
     def full(self):
         return len(self.members) == self.limit
@@ -20,10 +20,13 @@ class MembersList():
         return True
 
     def get(self):
+        logger.info(f"count: {len(self.members)}")
         return self.header + '\n\n' + '\n'.join(self.members)
 
-    def new(self, header, limit):
+    def new(self, header, limit, mid, gid):
         self.members = []
         self.ids = []
         self.header = header
         self.limit = limit
+        self.tmid = mid  # telegram message id
+        self.tgid = gid # telegram group id
