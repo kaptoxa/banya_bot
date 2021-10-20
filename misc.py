@@ -14,11 +14,10 @@ from config import *
 
 
 
-
-
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(TELEGRAM_API_KEY)
+
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 dp.middleware.setup(LoggingMiddleware())
